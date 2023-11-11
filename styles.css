@@ -157,8 +157,8 @@ section {
 
 .pg-motion {
     position: absolute;
-    transform: translateY(-20%);
-    transform: translateX(-10%);
+    transform: translateY(-50%);
+    transform: translateX(0%);
     z-index: 0;
 }
 

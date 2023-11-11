@@ -4,14 +4,8 @@ const tween = KUTE.fromTo(
     { path: '#blob2' },
     { repeat: 999, duration: 3000, yoyo: true }
 ).start();
-document.addEventListener('DOMContentLoaded', function() {
-    var animatedDiv = document.getElementById('animatedDiv');
 
-    // Reset the animation
-    animatedDiv.addEventListener('animationiteration', function() {
-        animatedDiv.style.opacity = 1;
-    });
-});
+
 const tween2 = KUTE.fromTo(
     '#pg1',
     { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starting translate position
@@ -135,6 +129,72 @@ const tween12 = KUTE.fromTo(
 ).start();
 const tween13 = KUTE.fromTo(
     '#pg12',
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+    {
+        repeat: 999,
+        duration: 1000,
+        yoyo: true,
+        easing: 'easingCubicInOut'
+    }// Easing function 
+).start();
+const tween14 = KUTE.fromTo(
+    '#pg13',
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+    {
+        repeat: 999,
+        duration: 1000,
+        yoyo: true,
+        easing: 'easingCubicInOut'
+    }// Easing function 
+).start();
+const tween15 = KUTE.fromTo(
+    '#pg14',
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+    {
+        repeat: 999,
+        duration: 1000,
+        yoyo: true,
+        easing: 'easingCubicInOut'
+    }// Easing function 
+).start();
+const tween16 = KUTE.fromTo(
+    '#pg15',
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+    {
+        repeat: 999,
+        duration: 1000,
+        yoyo: true,
+        easing: 'easingCubicInOut'
+    }// Easing function 
+).start();
+const tween17 = KUTE.fromTo(
+    '#pg16',
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+    {
+        repeat: 999,
+        duration: 1000,
+        yoyo: true,
+        easing: 'easingCubicInOut'
+    }// Easing function 
+).start();
+const tween18 = KUTE.fromTo(
+    '#pg17',
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+    { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+    {
+        repeat: 999,
+        duration: 1000,
+        yoyo: true,
+        easing: 'easingCubicInOut'
+    }// Easing function 
+).start();
+const tween19 = KUTE.fromTo(
+    '#pg18',
     { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
     { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
     {
