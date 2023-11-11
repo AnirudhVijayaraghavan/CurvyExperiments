@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            background: black;
+            overflow-x: hidden;
+        }
+
+        section {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 400px;
+            padding: 100px 20vw;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .black {
+            background-color: black;
+        }
+
+        .orange {
+            background-color: #F7770F;
+        }
+
+        .yellow {
+            background-color: #f2ff00;
+        }
+
+        .green {
+            background-color: #2fa11a;
+        }
+
+        .purple {
+            background-color: #d51ecd;
+        }
+
+
+        .curve {
+            position: absolute;
+            height: 225px;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .curve::before {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 100% 50%;
+            width: 55%;
+            height: 100%;
+            background-color: black;
+            transform: translate(85%, 60%);
+        }
+
+        .curve::after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 100% 50%;
+            width: 55%;
+            height: 100%;
+            background-color: blue;
+            transform: translate(-4%, 40%);
+            z-index: -1;
+        }
+
+        .bubble::after {
+            content: '';
+            border-top-left-radius: 50% 100%;
+            border-top-right-radius: 50% 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+            width: 100%;
+            background-color: red;
+            height: 85%;
+        }
+
+        .wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 159px;
+        }
+
+        .wave .shape-fill {
+            fill: red;
+        }
+
+        .spacer {
+            aspect-ratio: 960/230;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .layer1 {
+            background-image: url('./layer1.svg');
+        }
+
+        .spacer2 {
+            aspect-ratio: 960/300;
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .layer2 {
+            background-image: url('./layer2.svg');
+        }
+
+        .flip {
+            transform: rotate(180deg);
+        }
+
+        .layer3 {
+            background-image: url('./layer3.svg');
+        }
+
+        .layer4 {
+            background-image: url('./layer4.svg');
+        }
+
+        .blob-motion {
+            position: absolute;
+            transform: translateY(-20%);
+            z-index: 0;
+        }
+
+        .blob-content {
+            z-index: 1;
+        }
+
+        .pg-motion {
+            position: absolute;
+            transform: translateY(-20%);
+            transform: translateX(-10%);
+            z-index: 0;
+        }
+
+        .pg-content {
+            z-index: 1;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="blue">
+        <h1>Nice Curves</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa pariatur aliquid maiores blanditiis maxime
+            harum necessitatibus, adipisci molestiae minus deserunt eum itaque iste quis consequuntur commodi delectus
+            dolore porro architecto.</p>
+        <div class="curve"></div>
+    </section>
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Eius molestias optio, sit assumenda, dolore nihil corporis aperiam voluptates magnam odio facilis voluptatum
+            ut possimus praesentium incidunt aut error sapiente quo repudiandae quae tempore consequatur corrupti
+            blanditiis! Atque, rem.</p>
+    </section>
+    <section class="bubble">
+        <h1>Nice Curves</h1>
+        <p>Rem libero architecto voluptas veritatis, ipsa saepe ea alias et quo a? Eveniet doloribus esse sapiente,
+            distinctio facere aliquid excepturi ex cum quod eum quibusdam numquam! Illo praesentium est dolores!</p>
+    </section>
+    <section class="red">
+        <h1>Nice Curves</h1>
+        <p>Atque porro quibusdam quidem excepturi cupiditate laudantium dolores! Doloribus minus aliquid, quasi
+            consectetur quia id sint dicta ipsam molestias vel expedita dolore alias laborum eos adipisci dignissimos
+            labore aspernatur magni?</p>
+
+    </section>
+    <section>
+        <h1>Nice Curves</h1>
+        <p>Odio sit quasi, nemo illum reiciendis officiis cum consectetur quam, id error vero quidem sunt quis. Debitis,
+            eum consequatur non quidem animi esse. Itaque libero enim ducimus delectus doloribus quam.</p>
+        <div class="wave">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+    <div class="spacer layer1"></div>
+    <section class="orange">
+        <h1>Nice Curves</h1>
+        <p>Dolorum iste sint consequatur pariatur harum iusto necessitatibus beatae, praesentium quaerat, in iure
+            inventore ad quos. Sint et accusantium quos natus tempora, quasi eum autem quod consequatur sunt a velit.
+        </p>
+    </section>
+    <div class="spacer2 layer2"></div>
+    <section class="yellow">
+        <h1>Nice Curves</h1>
+        <p>Sit perspiciatis laborum a doloremque est voluptate nostrum maxime. Dolorum accusantium odit iste a, modi
+            reiciendis exercitationem expedita? Dolorem, voluptatum labore eveniet eius nesciunt ullam quam nihil
+            impedit vel laboriosam.</p>
+    </section>
+    <div class="spacer2 layer3 flip"></div>
+    <section class="green">
+        <div class="blob-content">
+            <h1>Nice Curves</h1>
+            <p>Porro, eius voluptatem id commodi consequatur, officia totam alias, voluptas quasi tempora dignissimos
+                nemo?
+                Repellendus illo culpa reprehenderit, asperiores, voluptatem hic illum possimus harum sunt laboriosam,
+                assumenda totam atque maiores.</p>
+        </div>
+
+        <svg class="blob-motion" id="visual" viewBox="0 0 900 300" width="900" height="500"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+            <g transform="translate(463.2807498377614 136.47163840136722)">
+                <path id="blob1"
+                    d="M86.5 -155.5C100.8 -141.7 93 -95.5 110.9 -64.1C128.8 -32.8 172.4 -16.4 193.6 12.2C214.7 40.8 213.5 81.7 198.8 118.6C184.1 155.6 156.1 188.6 120.7 187.4C85.3 186.1 42.7 150.6 9 135C-24.7 119.4 -49.3 123.8 -85.1 125.3C-120.9 126.8 -167.8 125.4 -199.3 104C-230.7 82.7 -246.6 41.3 -228.8 10.3C-211.1 -20.8 -159.7 -41.7 -127.3 -61.3C-94.8 -80.9 -81.4 -99.4 -63.4 -110.9C-45.3 -122.5 -22.7 -127.3 6.7 -139C36.2 -150.6 72.3 -169.3 86.5 -155.5"
+                    fill="#2dca00"></path>
+            </g>
+            <g transform="translate(459.2912616548925 138.76104668624134)" style="visibility: hidden;">
+                <path id="blob2"
+                    d="M65.9 -133.2C80.1 -105.9 82.7 -77.6 108.4 -55.2C134.2 -32.8 183.1 -16.4 188.8 3.3C194.5 23 157 46 128 62.7C99 79.5 78.5 90 58.6 111.8C38.7 133.6 19.3 166.8 -12.2 188C-43.7 209.1 -87.5 218.2 -115.2 200.9C-142.9 183.6 -154.6 139.8 -166.9 101.9C-179.2 64 -192.1 32 -200.8 -5C-209.4 -42 -213.8 -84 -193 -107.1C-172.2 -130.2 -126.1 -134.4 -89.7 -148.9C-53.3 -163.4 -26.7 -188.2 -0.4 -187.5C25.8 -186.7 51.7 -160.5 65.9 -133.2"
+                    fill="#2dca00"></path>
+            </g>
+        </svg>
+        <script>
+            const tween = KUTE.fromTo(
+                '#blob1',
+                { path: '#blob1' },
+                { path: '#blob2' },
+                { repeat: 999, duration: 3000, yoyo: true }
+            ).start();
+        </script>
+    </section>
+    <div class="spacer2 layer4"></div>
+    <section class="purple" style="min-height: 550px;">
+        <div class="pg-content">
+            <h1>Nice Curves</h1>
+            <p>Porro, eius voluptatem id commodi consequatur, officia totam alias, voluptas quasi tempora dignissimos
+                nemo?
+                Repellendus illo culpa reprehenderit, asperiores, voluptatem hic illum possimus harum sunt laboriosam,
+                assumenda totam atque maiores.</p>
+
+        </div>
+        <svg class="pg-motion" id="visual" viewBox="0 0 3000 1500" width="900" height="500"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+
+            <g transform="translate(648 104)">
+                <path id="pg1" d="M0 -42.4L36.7 -21.2L36.7 21.2L0 42.4L-36.7 21.2L-36.7 -21.2Z" fill="#730279">
+                </path>
+            </g>
+            <g transform="translate(405 37)">
+                <path id="pg2" d="M0 -36L31.2 -18L31.2 18L0 36L-31.2 18L-31.2 -18Z" fill="#730279"></path>
+            </g>
+            <g transform="translate(851 87)">
+                <path id="pg3" d="M0 -33L28.6 -16.5L28.6 16.5L0 33L-28.6 16.5L-28.6 -16.5Z" fill="#730279"></path>
+            </g>
+            <g transform="translate(450 51)">
+                <path id="pg4" d="M0 -42.4L36.7 -21.2L36.7 21.2L0 42.4L-36.7 21.2L-36.7 -21.2Z" fill="#730279">
+                </path>
+            </g>
+            <g transform="translate(404 222)">
+                <path id="pg5" d="M0 -21L18.2 -10.5L18.2 10.5L0 21L-18.2 10.5L-18.2 -10.5Z" fill="#730279"></path>
+            </g>
+            <g transform="translate(181 242)">
+                <path id="pg6" d="M0 -35L30.3 -17.5L30.3 17.5L0 35L-30.3 17.5L-30.3 -17.5Z" fill="#730279"></path>
+            </g>
+
+
+        </svg>
+        <svg class="pg-motion" id="visual" viewBox="0 0 1500 1500" width="1500" height="300"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+
+
+            <g transform="translate(648 104)">
+                <path id="pg7" d="M0 -42.4L36.7 -21.2L36.7 21.2L0 42.4L-36.7 21.2L-36.7 -21.2Z" fill="#730279">
+                </path>
+            </g>
+            <g transform="translate(405 37)">
+                <path id="pg8" d="M0 -36L31.2 -18L31.2 18L0 36L-31.2 18L-31.2 -18Z" fill="#730279"></path>
+            </g>
+            <g transform="translate(851 87)">
+                <path id="pg9" d="M0 -33L28.6 -16.5L28.6 16.5L0 33L-28.6 16.5L-28.6 -16.5Z" fill="#730279"></path>
+            </g>
+            <g transform="translate(450 51)">
+                <path id="pg10" d="M0 -42.4L36.7 -21.2L36.7 21.2L0 42.4L-36.7 21.2L-36.7 -21.2Z" fill="#730279">
+                </path>
+            </g>
+            <g transform="translate(404 222)">
+                <path id="pg11" d="M0 -21L18.2 -10.5L18.2 10.5L0 21L-18.2 10.5L-18.2 -10.5Z" fill="#730279"></path>
+            </g>
+            <g transform="translate(181 242)">
+                <path id="pg12" d="M0 -35L30.3 -17.5L30.3 17.5L0 35L-30.3 17.5L-30.3 -17.5Z" fill="#730279"></path>
+            </g>
+
+
+        </svg>
+        <br><br>
+        <script>
+
+            const tween2 = KUTE.fromTo(
+                '#pg1',
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starting translate position
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween3 = KUTE.fromTo(
+                '#pg2',
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starting translate position
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween4 = KUTE.fromTo(
+                '#pg3',
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starting translate position
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween5 = KUTE.fromTo(
+                '#pg4',
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starting translate position
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween6 = KUTE.fromTo(
+                '#pg5',
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starcyanmagentayellowting translate position
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween7 = KUTE.fromTo(
+                '#pg6',
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // Starting translate position
+                { translate: [Math.random() * 1000, Math.random() * 1000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween8 = KUTE.fromTo(
+                '#pg7',
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween9 = KUTE.fromTo(
+                '#pg8',
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween10 = KUTE.fromTo(
+                '#pg9',
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween11 = KUTE.fromTo(
+                '#pg10',
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween12 = KUTE.fromTo(
+                '#pg11',
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starcyanmagentayellowting translate position
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+            const tween13 = KUTE.fromTo(
+                '#pg12',
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // Starting translate position
+                { translate: [Math.random() * 2000, Math.random() * 2000] }, // New translate coordinates
+                {
+                    repeat: 999,
+                    duration: 1000,
+                    yoyo: true,
+                    easing: 'easingCubicInOut'
+                }// Easing function 
+            ).start();
+
+        </script>
+    </section>
+</body>
+
+</html>
