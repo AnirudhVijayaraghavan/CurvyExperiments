@@ -7,19 +7,66 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
-
+    <link rel="icon" href="favicons/favicon-128.png">
 
     <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>Groovy SVG Experiments</title>
 </head>
 
 <body>
     <section class="blue">
-        <h1>Nice Curves</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa pariatur aliquid maiores blanditiis maxime
-            harum necessitatibus, adipisci molestiae minus deserunt eum itaque iste quis consequuntur commodi delectus
-            dolore porro architecto.</p>
+        <h1>Simple Wave</h1>
+        <p>This section has the most complicated bit, I promise. It involves experimenting with a couple transform, and
+            border radius properties to perfectly align the half sine waves to make them appear continuous.</p> <br>
+        <br> <br><br>
+        <div>
+            <p>HTML : </p>
+            <img src="HTML Section 1.png" alt="">
+            <br> <br><br>
+            <div class="container">
+                <p class="item2">CSS : <br>
+                    Changing the values of the transform property, will determine where the points of the sine wave you
+                    see at the bottom
+                    of the container meet. <br> <br>
+
+                </p>
+                <pre class="item3" id="myPreTag">
+                    .curve {
+                        position: absolute;
+                        height: 225px;
+                        width: 100%;
+                        bottom: 0;
+                    }
+                    
+                    .curve::before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        border-radius: 100% 50%;
+                        width: 55%;
+                        height: 100%;
+                        background-color: black;
+                        transform: translate(85%, 60%);
+                    }
+                    
+                    .curve::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        border-radius: 100% 50%;
+                        width: 55%;
+                        height: 100%;
+                        background-color: blue;
+                        transform: translate(-4%, 40%);
+                        z-index: -1;
+                    }
+                    </pre>
+                <img class="item1" src="CSS Section 1.png" alt="">
+            </div>
+
+        </div>
+
         <div class="curve"></div>
     </section>
     <section>

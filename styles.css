@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     background: black;
     overflow-x: hidden;
@@ -11,7 +11,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 400px;
+    min-height: 500px;
     padding: 100px 20vw;
 }
 
@@ -136,12 +136,12 @@ section {
 
 .layer3 {
     background-image: url('./layer3.svg');
-    
+
 }
 
 .layer4 {
     background-image: url('./layer4.svg');
-    
+
 }
 
 
@@ -164,4 +164,51 @@ section {
 
 .pg-content {
     z-index: 1;
+}
+
+/* code snippet tool  */
+pre {
+    position: relative;
+    background: black;
+    padding: 10px;
+    font-size: 15px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    border: 1px solid #e6e7e9;
+}
+
+.copy-button {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+    cursor: pointer;
+    color: #fff;
+    background: gray;
+    border-radius: 0.5em;
+    padding: 2px 7px;
+}
+
+.copy-button:hover {
+    color: #000;
+}
+
+.container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 
+      "A B"
+      "A C";
+    grid-gap: 10px;
+}
+
+.item1 {
+    grid-area: A;
+}
+
+.item2 {
+    grid-area: B;
+}
+
+.item3 {
+    grid-area: C;
 }
